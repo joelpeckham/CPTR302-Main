@@ -2,6 +2,7 @@ PROJECT (Main LANGUAGES CSharp)
 CMAKE_MINIMUM_REQUIRED ( VERSION 3.12)
 set(CMAKE_DOTNET_TARGET_FRAMEWORK_VERSION "4.5.2")
 set(CMAKE_CSharp_FLAGS "/langversion:7")
+include(CTest)
 
 add_executable (${PROJECT_NAME} 
     App.config
@@ -33,3 +34,4 @@ ExternalProject_Add(Firmware
 )
 
 add_dependencies(${PROJECT_NAME} Firmware)
+add_subdirectory(Tests)
